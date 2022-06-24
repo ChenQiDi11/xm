@@ -1,0 +1,82 @@
+﻿<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link href="css/mui.css" rel="stylesheet" />
+</head>
+
+
+<style>
+    .mui-btn-block {
+        padding: 3px 0;
+    }
+</style>>
+
+<body>
+    <script src="js/mui.js"></script>
+    <script type="text/javascript">
+			mui.init()
+    </script>
+    <header class="mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">helloworld</h1>
+    </header>
+    <div class="mui-content mui-content-padded">
+        <button type="button" class="mui-btn ">按钮</button>
+        <br><br>
+        <button type="button" class="mui-btn mui-btn-primary">蓝色</button>
+        <button type="button" class="mui-btn mui-btn-success">绿色</button>
+        <button type="button" class="mui-btn mui-btn-warning">黄色</button>
+        <button type="button" class="mui-btn mui-btn-danger">红色</button>
+        <button type="button" class="mui-btn mui-btn-royal">紫色</button>
+        <br><br>
+        <button type="button" class="mui-btn mui-btn-primary mui-btn-outlined">蓝色</button>
+        <button type="button" class="mui-btn mui-btn-success mui-btn-outlined">绿色</button>
+        <button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">黄色</button>
+        <button type="button" class="mui-btn mui-btn-danger mui-btn-outlined">红色</button>
+        <button type="button" class="mui-btn mui-btn-royal mui-btn-outlined">紫色</button>
+
+        <br><br>
+        <button type="button" class="mui-btn mui-btn-primary mui-btn-outlined mui-btn-block">蓝色</button>
+        <button type="button" class="mui-btn mui-btn-success mui-btn-outlined">绿色</button>
+        <button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">黄色</button>
+        <button type="button" class="mui-btn mui-btn-danger mui-btn-outlined">红色</button>
+        <button type="button" class="mui-btn mui-btn-royal mui-btn-outlined">紫色</button>
+
+        <button type="button" data-loading-icon="mui-spinner mui-spinner-custom"
+                class="mui-btn mui-btn-primary">
+            确认
+        </button>
+
+
+
+    </div>
+    <div class="mui-card">
+        <!--页眉，放置标题-->
+        <div class="mui-card-header">页眉</div>
+        <!--内容区-->
+        <div class="mui-card-content">内容区</div>
+        <!--页脚，放置补充信息或支持的操作-->
+        <div class="mui-card-footer">页脚</div>
+    </div>
+
+</body>
+<script>
+		var buttons = document.getElementsByClassName("mui-btn");
+		for (i = 0; i < buttons.length; i++) {
+			//为每个按钮绑定点击事件
+			buttons[i].onclick = function() {
+				//将按钮的状态修改为加载中
+				mui(this).button('loading');
+				//2秒后将按钮的状态恢复
+				setTimeout(function() {
+					mui(this).button('reset');
+				}.bind(this), 2000);
+			}
+		}
+</script>
+</html>
